@@ -58,6 +58,16 @@ footer{background:#292d24;color:#e9e4d8;padding:35px clamp(20px,6vw,92px);displa
 .film-note a{color:var(--olive);text-decoration:underline;text-underline-offset:4px}
 @media(max-width:760px){.featured-films{grid-template-columns:1fr 1fr;gap:10px}.featured-film:last-child{grid-column:span 2}.featured-film span{font-size:18px}}
 
+
+/* Mobile navigation visibility and touch fixes */
+#mobileNav[hidden]{display:none!important}
+@media(max-width:760px){
+  #mobileNav:not([hidden]){display:flex!important;position:sticky;top:70px;z-index:20;gap:18px;box-shadow:0 8px 18px rgba(0,0,0,.08)}
+  #mobileNav a{display:block;padding:10px 8px;min-height:40px;touch-action:manipulation}
+  header{z-index:30}
+  .menu{display:block;position:relative;z-index:31;min-width:44px;min-height:44px;padding:6px;cursor:pointer;touch-action:manipulation}
+}
+
 </style>
 </head>
 <body>
@@ -65,7 +75,7 @@ footer{background:#292d24;color:#e9e4d8;padding:35px clamp(20px,6vw,92px);displa
 <header>
  <a class="brand" href="#home"><img src="assets/ototo-mark.jpg" alt="OTOTO mark"><span><strong>OTOTO</strong><small>ARTISAN BREAD & COFFEE</small></span></a>
  <nav><a href="#story">Our Story</a><a href="#artisan">Artisan</a><a href="#heritage">The Heritage</a><a href="#films">Life at OTOTO</a><a href="#visit">Find Us</a></nav>
- <button class="menu" aria-label="Open navigation" onclick="document.getElementById('mobileNav').hidden=!document.getElementById('mobileNav').hidden">☰</button>
+ <button class="menu" id="menuToggle" type="button" aria-label="Buka menu navigasi" aria-controls="mobileNav" aria-expanded="false" onclick="const panel=document.getElementById('mobileNav'); const opened=panel.hidden; panel.hidden=!opened; this.setAttribute('aria-expanded', String(opened)); this.setAttribute('aria-label', opened ? 'Tutup menu navigasi' : 'Buka menu navigasi'); this.textContent=opened ? '×' : '☰';">☰</button>
 </header>
 <nav id="mobileNav" hidden style="position:sticky;top:70px;background:#fbf9f4;padding:18px 22px;z-index:9;justify-content:center;flex-wrap:wrap"><a href="#story">Our Story</a><a href="#artisan">Artisan</a><a href="#heritage">The Heritage</a><a href="#films">Life at OTOTO</a><a href="#visit">Find Us</a></nav>
 <main id="home">
@@ -114,4 +124,18 @@ footer{background:#292d24;color:#e9e4d8;padding:35px clamp(20px,6vw,92px);displa
 <section class="visit" id="visit"><span class="kicker" style="color:#7d806c">Your table is waiting</span><h2>Come, feel at home.</h2><p>We would love to welcome you.</p><div class="address">OTOTO Artisan Bread & Coffee<br>Jl. Mayjend Sutoyo No. 28 · Magelang<br>Everyday · 08.00–20.00</div><a class="cta" style="border-color:#536747;color:#536747;margin:28px auto 0" href="https://www.google.com/maps/search/?api=1&query=Jl.+Mayjend+Sutoyo+No.+28+Magelang" target="_blank" rel="noreferrer">Find OTOTO <span>↗</span></a></section>
 </main>
 <footer><strong>OTOTO</strong><span>ARTISAN BREAD & COFFEE · MAGELANG</span><span>SELAMAT KEMBALI KE RUMAH.</span></footer>
+
+<script>
+document.querySelectorAll('#mobileNav a').forEach(function(link){
+  link.addEventListener('click', function(){
+    var panel=document.getElementById('mobileNav');
+    var toggle=document.getElementById('menuToggle');
+    panel.hidden=true;
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Buka menu navigasi');
+    toggle.textContent='☰';
+  });
+});
+</script>
+
 </body></html>
