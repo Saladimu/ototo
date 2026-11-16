@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#536747">
-<title>OTOTO — Artisan Bread & Coffee</title>
+<title>OTOTO — Artisan Bread & Coffee | Stories & Moments</title>
 <style>
 :root{--olive:#536747;--cream:#f4efe5;--paper:#fbf9f4;--ink:#282820;--muted:#777467;--wood:#a17c5c;--line:#ded7c9}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
@@ -33,20 +33,45 @@ h1{font-size:clamp(48px,6vw,84px);line-height:.98;margin:25px 0 20px;letter-spac
 .visit{padding:100px 20px;text-align:center;background:var(--cream)}.visit h2{font-size:clamp(42px,5vw,64px);margin:16px 0}.visit p{color:#6f6b60;line-height:1.8}.visit .address{font-size:14px;letter-spacing:.04em;margin-top:26px}
 footer{background:#292d24;color:#e9e4d8;padding:35px clamp(20px,6vw,92px);display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:10px;letter-spacing:.1em}footer strong{font-family:Georgia,serif;letter-spacing:.2em;font-size:17px}
 @media(max-width:760px){header{height:70px}.brand img{width:45px;height:45px}nav{display:none}.menu{display:block}.hero{grid-template-columns:1fr}.hero-copy{padding:65px 28px 55px;order:2}.hero-photo{min-height:430px;order:1}.hero-stamp{right:5%;bottom:5%}.intro{padding:75px 25px}.section{padding:65px 20px}.section-head{display:block}.section-head p{margin-top:15px}.products{grid-template-columns:1fr}.product,.product img{height:430px;min-height:430px}.story{grid-template-columns:1fr}.story-photo img{min-height:360px;height:360px}.story-copy{padding:55px 28px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:210px 210px 210px}.gallery img:first-child{grid-row:auto}.gallery img:last-child{grid-column:auto}.promo{grid-template-columns:1fr}.promo img{height:320px;order:2}.promo-copy{padding:55px 28px;order:1}.visit{padding:75px 25px}footer{flex-direction:column;text-align:center}}
+
+.video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.video-card{background:#eee8dc;border:1px solid var(--line);overflow:hidden}
+.video-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#222}
+.video-caption{display:flex;justify-content:space-between;gap:8px;padding:12px;font-size:10px;color:#555449}
+.video-caption span{text-transform:uppercase;letter-spacing:.08em}
+.video-caption small{color:#8b8578}
+.still-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.still-card{margin:0;background:var(--cream)}
+.still-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.still-card figcaption{padding:10px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#625e53}
+@media(max-width:760px){.video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.still-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+.hero-photo .hero-video{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center}
+.featured-films{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.featured-film{background:#eee8dc;border:1px solid var(--line)}
+.featured-film video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#222}
+.featured-film div{padding:14px 15px 16px}
+.featured-film span{display:block;font-family:Georgia,serif;font-size:21px;color:var(--ink)}
+.featured-film small{display:block;margin-top:5px;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.film-note{margin-top:22px;text-align:center;color:var(--muted);font-size:12px}
+.film-note a{color:var(--olive);text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.featured-films{grid-template-columns:1fr 1fr;gap:10px}.featured-film:last-child{grid-column:span 2}.featured-film span{font-size:18px}}
+
 </style>
 </head>
 <body>
 <div class="topline"></div>
 <header>
  <a class="brand" href="#home"><img src="assets/ototo-mark.jpg" alt="OTOTO mark"><span><strong>OTOTO</strong><small>ARTISAN BREAD & COFFEE</small></span></a>
- <nav><a href="#story">Our Story</a><a href="#artisan">Artisan</a><a href="#heritage">The Heritage</a><a href="#visit">Find Us</a></nav>
+ <nav><a href="#story">Our Story</a><a href="#artisan">Artisan</a><a href="#heritage">The Heritage</a><a href="#films">Life at OTOTO</a><a href="#visit">Find Us</a></nav>
  <button class="menu" aria-label="Open navigation" onclick="document.getElementById('mobileNav').hidden=!document.getElementById('mobileNav').hidden">☰</button>
 </header>
-<nav id="mobileNav" hidden style="position:sticky;top:70px;background:#fbf9f4;padding:18px 22px;z-index:9;justify-content:center;flex-wrap:wrap"><a href="#story">Our Story</a><a href="#artisan">Artisan</a><a href="#heritage">The Heritage</a><a href="#visit">Find Us</a></nav>
+<nav id="mobileNav" hidden style="position:sticky;top:70px;background:#fbf9f4;padding:18px 22px;z-index:9;justify-content:center;flex-wrap:wrap"><a href="#story">Our Story</a><a href="#artisan">Artisan</a><a href="#heritage">The Heritage</a><a href="#films">Life at OTOTO</a><a href="#visit">Find Us</a></nav>
 <main id="home">
 <section class="hero">
  <div class="hero-copy"><span class="kicker">A little taste of yesterday</span><h1>Selamat<br>kembali<br>ke rumah.</h1><p>Selamat menikmati masa lalu. A warm place for bread, coffee, and familiar memories.</p><a class="cta" href="#story">Discover OTOTO <span>→</span></a></div>
- <div class="hero-photo"><img src="assets/cafe-exterior.jpg" alt="OTOTO cafe at golden hour"><div class="hero-stamp"><b>OTOTO</b><span>ARTISAN BREAD & COFFEE</span></div></div>
+ <div class="hero-photo"><video class="hero-video" autoplay muted loop playsinline poster="assets/cafe-exterior.jpg" aria-label="Suasana OTOTO"><source src="assets/videos/hero-atmosphere.mp4" type="video/mp4"></video><div class="hero-stamp"><b>OTOTO</b><span>ARTISAN BREAD & COFFEE</span></div></div>
 </section>
 <section class="intro" id="story"><span class="kicker" style="color:#7d806c">The OTOTO feeling</span><h2>More than bread & coffee.</h2><p>A place to slow down, share something good, and feel at home. Inspired by the warmth of familiar places and the quiet beauty of memories.</p></section>
 <section class="section" id="artisan">
@@ -63,6 +88,24 @@ footer{background:#292d24;color:#e9e4d8;padding:35px clamp(20px,6vw,92px);displa
 <section class="section">
  <div class="section-head"><div><span class="kicker" style="color:#7d806c">A glimpse of OTOTO</span><h2>Life at OTOTO</h2></div><p>Small moments, shared around the table.</p></div>
  <div class="gallery"><img src="assets/orchid-table.jpg" alt="Flowers and ceramics"><img src="assets/heritage-details.jpg" alt="OTOTO cafe details"><img src="assets/heritage-house.jpg" alt="Heritage house"><img src="assets/artisan-bread.jpg" alt="Fresh artisan bread"></div>
+</section>
+<section class="section" id="films">
+ <div class="section-head"><div><span class="kicker" style="color:#7d806c">Moving moments</span><h2>Life at OTOTO</h2></div><p>A few quiet glimpses of the place, the people, and the things we make.</p></div>
+ <div class="featured-films">
+  <article class="featured-film"><video controls muted playsinline preload="metadata" poster="assets/stills/ototo-still-19.jpg"><source src="assets/videos/story-heritage.mp4" type="video/mp4"></video><div><span>The Heritage</span><small>Space & details</small></div></article>
+  <article class="featured-film"><video controls muted playsinline preload="metadata" poster="assets/stills/ototo-still-01.jpg"><source src="assets/videos/story-people.mp4" type="video/mp4"></video><div><span>People & Moments</span><small>A warm welcome</small></div></article>
+  <article class="featured-film"><video controls muted playsinline preload="metadata" poster="assets/stills/ototo-still-20.jpg"><source src="assets/videos/story-coffee.mp4" type="video/mp4"></video><div><span>Food & Beverage</span><small>Made to be enjoyed</small></div></article>
+ </div>
+ <p class="film-note">More moments and updates on <a href="https://www.instagram.com/ototoartisan/" target="_blank" rel="noreferrer">Instagram @ototoartisan ↗</a></p>
+</section>
+<section class="section" id="moments">
+ <div class="section-head"><div><span class="kicker" style="color:#7d806c">Still frames from our stories</span><h2>Small moments, lasting memories</h2></div><p>A visual diary of OTOTO, collected from the stories shared with our community.</p></div>
+ <div class="gallery">
+  <img loading="lazy" src="assets/stills/ototo-still-11.jpg" alt="Heritage interior at OTOTO">
+  <img loading="lazy" src="assets/stills/ototo-still-03.jpg" alt="Coffee and artisan bread">
+  <img loading="lazy" src="assets/stills/ototo-still-19.jpg" alt="OTOTO heritage space">
+  <img loading="lazy" src="assets/stills/ototo-still-20.jpg" alt="Coffee and pastry">
+ </div>
 </section>
 <section class="promo">
  <div class="promo-copy"><span class="kicker">A little treat</span><h2>Happy hours<br>at OTOTO.</h2><p>Discover the current moments and offers at OTOTO. Follow our Instagram for the latest updates.</p><a class="cta" href="https://www.instagram.com/ototoartisan/" target="_blank" rel="noreferrer">Follow Instagram <span>↗</span></a></div>

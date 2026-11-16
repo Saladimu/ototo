@@ -1,0 +1,9 @@
+OTOTO media direction — curated homepage
+
+Hero video: assets/videos/hero-atmosphere.mp4 (clip 06; cafe interior and guests)
+Featured film cards:
+- The Heritage: story-heritage.mp4 (clip 19)
+- People & Moments: story-people.mp4 (clip 01)
+- Food & Beverage: story-coffee.mp4 (clip 20)
+
+Homepage is intentionally restrained: one muted autoplay hero loop, three manually playable featured clips, and a four-image still gallery. The full set of original Instagram clips remains in assets/videos/ototo-*.mp4, with extracted representative frames in assets/stills/.
